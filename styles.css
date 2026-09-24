@@ -1,6 +1,7 @@
 /* =========================================================
    DOA IBU FC — OFFICIAL WEBSITE
    PREMIUM FUTSAL CLUB STYLE
+   FULL RESPONSIVE VERSION
 ========================================================= */
 
 
@@ -28,6 +29,10 @@ body {
 
 a {
     color: inherit;
+}
+
+img {
+    max-width: 100%;
 }
 
 ::selection {
@@ -67,7 +72,7 @@ a {
 
 
 /* =========================================================
-   NAVBAR LOGO
+   LOGO
 ========================================================= */
 
 .logo {
@@ -456,6 +461,8 @@ nav a:hover::after {
 ========================================================= */
 
 .player-link {
+    display: block;
+
     text-decoration: none;
 
     color: inherit;
@@ -503,7 +510,22 @@ nav a:hover::after {
         border-color 0.35s ease;
 }
 
-.player-card::before {
+.player-card:hover {
+    transform: translateY(-9px);
+
+    border-color:
+        rgba(22, 132, 170, 0.15);
+
+    box-shadow:
+        0 22px 45px rgba(18, 59, 82, 0.13);
+}
+
+
+/* =========================================================
+   CARD BACKGROUND DECORATION
+========================================================= */
+
+.player-card:not(:has(.player-card-photo))::before {
     content: "";
 
     position: absolute;
@@ -526,42 +548,74 @@ nav a:hover::after {
     transition: 0.4s ease;
 }
 
-.player-card::after {
+.player-card:not(:has(.player-card-photo)):hover::before {
+    transform: scale(1.2);
+}
+
+
+/* =========================================================
+   PLAYER CARD PHOTO
+========================================================= */
+
+.player-card-photo {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    z-index: 0;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.player-card:hover .player-card-photo {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   PHOTO OVERLAY
+========================================================= */
+
+.player-card:has(.player-card-photo)::after {
     content: "";
 
     position: absolute;
 
-    left: 0;
-    bottom: 0;
+    inset: 0;
 
     width: 100%;
-    height: 3px;
+    height: 100%;
 
-    background: #1684aa;
+    background:
+        linear-gradient(
+            to top,
+            rgba(8, 36, 52, 0.95) 0%,
+            rgba(8, 36, 52, 0.45) 45%,
+            rgba(8, 36, 52, 0.05) 80%
+        );
 
-    transform: scaleX(0);
+    z-index: 1;
 
-    transform-origin: left;
-
-    transition: 0.35s ease;
+    transform: none;
 }
 
-.player-card:hover {
-    transform: translateY(-9px);
 
-    border-color:
-        rgba(22, 132, 170, 0.15);
+/* =========================================================
+   PLAYER CARD INFORMATION
+========================================================= */
 
-    box-shadow:
-        0 22px 45px rgba(18, 59, 82, 0.13);
-}
+.player-card-info {
+    position: relative;
 
-.player-card:hover::before {
-    transform: scale(1.2);
-}
-
-.player-card:hover::after {
-    transform: scaleX(1);
+    z-index: 3;
 }
 
 .player-card h3,
@@ -570,7 +624,7 @@ nav a:hover::after {
 .player-card .view-profile {
     position: relative;
 
-    z-index: 2;
+    z-index: 3;
 }
 
 
@@ -593,6 +647,15 @@ nav a:hover::after {
     font-weight: 900;
 
     line-height: 1;
+
+    z-index: 3 !important;
+}
+
+
+/* NUMBER WHEN PHOTO EXISTS */
+
+.player-card:has(.player-card-photo) .number {
+    color: rgba(255, 255, 255, 0.78);
 }
 
 
@@ -623,12 +686,14 @@ nav a:hover::after {
 }
 
 
-/* =========================================================
-   GOALKEEPER
-========================================================= */
+/* TEXT WHEN CARD HAS PHOTO */
 
-.goalkeeper {
-    border: 2px solid rgba(22, 132, 170, 0.35);
+.player-card:has(.player-card-photo) h3 {
+    color: white;
+}
+
+.player-card:has(.player-card-photo) p {
+    color: rgba(255, 255, 255, 0.75);
 }
 
 
@@ -660,6 +725,19 @@ nav a:hover::after {
     opacity: 1;
 
     transform: translateY(0);
+}
+
+.player-card:has(.player-card-photo) .view-profile {
+    color: #bdeeff;
+}
+
+
+/* =========================================================
+   GOALKEEPER
+========================================================= */
+
+.goalkeeper {
+    border: 2px solid rgba(22, 132, 170, 0.35);
 }
 
 
@@ -1211,7 +1289,7 @@ nav a:hover::after {
 
 
 /* =========================================================
-   MATCH TEAM LOGO
+   TEAM LOGO
 ========================================================= */
 
 .team-logo {
@@ -1249,11 +1327,6 @@ nav a:hover::after {
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
-
-
-/* =========================================================
-   REAL DOA IBU LOGO
-========================================================= */
 
 .team-logo img {
     width: 82%;
@@ -1495,110 +1568,393 @@ nav a:hover::after {
 ========================================================= */
 
 .gallery {
-    padding: 110px 8%;
-
+    position: relative;
+    padding: 110px 7% 120px;
     text-align: center;
-
-    background: #f4fbff;
+    background:
+        linear-gradient(
+            180deg,
+            #f4fbff 0%,
+            #eef9fd 100%
+        );
+    overflow: hidden;
 }
 
-.gallery h2 {
-    margin: 10px 0 50px;
+/* Decorative background */
 
+.gallery::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -220px;
+    right: -180px;
+    border-radius: 50%;
+    border: 1px solid rgba(22, 132, 170, 0.08);
+}
+
+.gallery::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    bottom: -180px;
+    left: -150px;
+    border-radius: 50%;
+    border: 1px solid rgba(22, 132, 170, 0.08);
+}
+
+
+/* =========================================================
+   GALLERY HEADER
+========================================================= */
+
+.gallery-header {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto 55px;
+}
+
+.gallery-header .section-label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.gallery-header h2 {
+    margin: 0;
     color: #123b52;
-
-    font-size: 44px;
+    font-size: clamp(40px, 5vw, 58px);
+    font-weight: 900;
+    letter-spacing: -1px;
 }
+
+.gallery-header p {
+    max-width: 600px;
+    margin: 18px auto 0;
+    color: #718894;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GALLERY GRID
+========================================================= */
 
 .gallery-content {
-    display: grid;
+    position: relative;
+    z-index: 2;
 
+    display: grid;
     grid-template-columns:
         repeat(3, 1fr);
 
     gap: 25px;
 
-    max-width: 1300px;
-
+    max-width: 1350px;
     margin: auto;
 }
 
-.gallery-placeholder {
+
+/* =========================================================
+   GALLERY ITEM
+========================================================= */
+
+.gallery-item {
     position: relative;
+    height: 430px;
 
     overflow: hidden;
 
-    padding: 65px 20px;
+    border-radius: 22px;
 
     background:
         linear-gradient(
             145deg,
-            #ffffff,
-            #f4fcff
+            #dff6ff,
+            #c5eaf7
         );
 
-    border:
-        1px solid rgba(22, 132, 170, 0.07);
-
-    border-radius: 20px;
-
     box-shadow:
-        0 12px 30px rgba(18, 59, 82, 0.07);
+        0 18px 45px rgba(18, 59, 82, 0.10);
+
+    cursor: pointer;
 
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
-.gallery-placeholder::before {
+
+/* =========================================================
+   GALLERY IMAGE
+========================================================= */
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.gallery-item::after {
     content: "";
 
     position: absolute;
+    inset: 0;
 
-    width: 140px;
-    height: 140px;
+    background:
+        linear-gradient(
+            to top,
+            rgba(8, 36, 52, 0.95) 0%,
+            rgba(8, 36, 52, 0.60) 32%,
+            rgba(8, 36, 52, 0.12) 68%,
+            rgba(8, 36, 52, 0.02) 100%
+        );
 
-    right: -50px;
-    top: -50px;
-
-    border-radius: 50%;
-
-    background: #dff6ff;
+    z-index: 1;
 }
 
-.gallery-placeholder:hover {
-    transform: translateY(-8px);
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.gallery-item:hover {
+    transform: translateY(-10px);
 
     box-shadow:
-        0 22px 45px rgba(18, 59, 82, 0.12);
+        0 28px 60px rgba(18, 59, 82, 0.18);
 }
 
-.gallery-placeholder span,
-.gallery-placeholder h3,
-.gallery-placeholder p {
-    position: relative;
-
-    z-index: 2;
+.gallery-item:hover img {
+    transform: scale(1.07);
 }
 
-.gallery-placeholder span {
-    font-size: 48px;
+
+/* =========================================================
+   GALLERY CONTENT OVER IMAGE
+========================================================= */
+
+.gallery-overlay {
+    position: absolute;
+
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+
+    z-index: 3;
+
+    text-align: left;
+
+    color: white;
 }
 
-.gallery-placeholder h3 {
-    margin-top: 20px;
 
-    color: #126b8c;
+/* Small category */
 
-    font-size: 17px;
+.gallery-overlay span {
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    color: #bdeeff;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
 }
 
-.gallery-placeholder p {
-    margin-top: 8px;
 
-    color: #777;
+/* Main title */
+
+.gallery-overlay h3 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 23px;
+    font-weight: 900;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* Description */
+
+.gallery-overlay p {
+    margin-top: 7px;
+
+    color:
+        rgba(255, 255, 255, 0.78);
 
     font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   GALLERY NUMBER
+========================================================= */
+
+.gallery-number {
+    position: absolute;
+
+    top: 20px;
+    right: 24px;
+
+    z-index: 3;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 55px;
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   GALLERY TOP LINE
+========================================================= */
+
+.gallery-item .gallery-line {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    width: 45px;
+    height: 3px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    z-index: 3;
+
+    transition:
+        width 0.4s ease;
+}
+
+.gallery-item:hover .gallery-line {
+    width: 75px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .gallery {
+        padding:
+            90px 5% 100px;
+    }
+
+    .gallery-content {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .gallery-item {
+        height: 390px;
+    }
+
+    .gallery-item:last-child {
+        grid-column:
+            1 / -1;
+
+        max-width: 50%;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .gallery {
+        padding:
+            75px 5% 85px;
+    }
+
+    .gallery-header {
+        margin-bottom: 38px;
+    }
+
+    .gallery-header h2 {
+        font-size: 38px;
+    }
+
+    .gallery-header p {
+        font-size: 12px;
+    }
+
+    .gallery-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery-item {
+        height: 350px;
+    }
+
+    .gallery-item:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .gallery-overlay {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 20px;
+    }
+
+    .gallery-number {
+        font-size: 45px;
+        right: 20px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .gallery-header h2 {
+        font-size: 34px;
+    }
+
+    .gallery-item {
+        height: 310px;
+    }
 }
 
 
@@ -1667,7 +2023,7 @@ footer p:last-child {
 
 
 /* =========================================================
-   MOBILE
+   MOBILE / TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -1729,6 +2085,10 @@ footer p:last-child {
     .gallery-content {
         grid-template-columns:
             1fr;
+    }
+
+    .gallery-item {
+        height: 340px;
     }
 
 }
@@ -1831,7 +2191,7 @@ footer p:last-child {
     }
 
     .player-card {
-        min-height: 180px;
+        min-height: 200px;
     }
 
     .view-profile {
@@ -1908,9 +2268,7 @@ footer p:last-child {
     }
 
 
-    /* =====================================================
-       MATCH MOBILE
-    ===================================================== */
+    /* MATCH */
 
     .match {
         padding: 75px 5% 90px;
@@ -1929,7 +2287,7 @@ footer p:last-child {
     }
 
 
-    /* TEAMS MOBILE */
+    /* TEAMS */
 
     .teams {
         gap: 8px;
@@ -2013,6 +2371,22 @@ footer p:last-child {
         padding: 75px 5%;
     }
 
+    .gallery-item {
+        height: 300px;
+
+        border-radius: 18px;
+    }
+
+    .gallery-overlay {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 18px;
+    }
+
 }
 
 
@@ -2065,80 +2439,8 @@ footer p:last-child {
         height: 40px;
     }
 
-}/* =========================================================
-   PLAYER CARD PHOTO
-========================================================= */
+    .gallery-item {
+        height: 270px;
+    }
 
-.player-card-photo {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center top;
-
-    z-index: 0;
-
-    transition: transform 0.5s ease;
-}
-
-.player-card:hover .player-card-photo {
-    transform: scale(1.05);
-}
-
-/* GRADIENT DI ATAS FOTO */
-
-.player-card::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 65%;
-
-    background: linear-gradient(
-        transparent,
-        rgba(8, 36, 52, 0.9)
-    );
-
-    z-index: 1;
-
-    transform: none;
-}
-
-/* INFORMASI PEMAIN */
-
-.player-card-info {
-    position: relative;
-
-    z-index: 3;
-}
-
-/* WARNA TEKS KETIKA ADA FOTO */
-
-.player-card:has(.player-card-photo) h3 {
-    color: white;
-}
-
-.player-card:has(.player-card-photo) p {
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.player-card:has(.player-card-photo) .view-profile {
-    color: #bdeeff;
-}
-
-/* NOMOR DI ATAS FOTO */
-
-.player-card:has(.player-card-photo) .number {
-    z-index: 3;
-
-    color: rgba(255, 255, 255, 0.75);
 }
