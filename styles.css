@@ -1,0 +1,2144 @@
+/* =========================================================
+   DOA IBU FC — OFFICIAL WEBSITE
+   PREMIUM FUTSAL CLUB STYLE
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4fbff;
+    color: #123b52;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+::selection {
+    background: #1684aa;
+    color: white;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    height: 76px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(22, 132, 170, 0.08);
+
+    box-shadow:
+        0 5px 25px rgba(18, 59, 82, 0.06);
+}
+
+
+/* =========================================================
+   NAVBAR LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    position: relative;
+}
+
+.logo img {
+    width: 43px;
+    height: 43px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    mix-blend-mode: multiply;
+
+    filter:
+        drop-shadow(
+            0 4px 8px rgba(18, 59, 82, 0.12)
+        );
+}
+
+.logo span {
+    position: relative;
+
+    color: #147da4;
+
+    font-size: 21px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+.logo span::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 28px;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background: #36acd4;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+nav a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #123b52;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -9px;
+
+    width: 0;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background: #1684aa;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #1684aa;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: calc(100vh - 76px);
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(189, 238, 255, 0.95) 0%,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(168, 229, 248, 0.85) 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #effbff,
+            #dff6ff
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -180px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(22, 132, 170, 0.1);
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: -180px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(22, 132, 170, 0.1);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    padding: 40px 20px;
+
+    animation: heroFade 1s ease both;
+}
+
+@keyframes heroFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   HERO LOGO
+========================================================= */
+
+.hero-logo {
+    width: 155px;
+    height: 155px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    margin-bottom: 25px;
+
+    mix-blend-mode: multiply;
+
+    filter:
+        drop-shadow(
+            0 18px 30px rgba(18, 59, 82, 0.16)
+        );
+
+    animation:
+        logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.small-title {
+    margin-bottom: 20px;
+
+    color: #1684aa;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 6px;
+}
+
+.hero h1 {
+    margin-bottom: 15px;
+
+    color: #147da4;
+
+    font-size: clamp(55px, 8vw, 100px);
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    line-height: 0.95;
+
+    text-shadow:
+        0 10px 25px rgba(20, 125, 164, 0.12);
+}
+
+.slogan {
+    margin-bottom: 38px;
+
+    color: #355d6e;
+
+    font-size: 17px;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.button {
+    display: inline-block;
+
+    padding: 15px 34px;
+
+    background: #1684aa;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 12px 25px rgba(22, 132, 170, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background: #0e5f7d;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 35px rgba(22, 132, 170, 0.32);
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.section-label {
+    color: #1684aa;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   SQUAD
+========================================================= */
+
+.squad {
+    padding: 110px 8%;
+
+    text-align: center;
+
+    background: #f4fbff;
+}
+
+.squad h2 {
+    margin: 10px 0 55px;
+
+    color: #123b52;
+
+    font-size: 44px;
+
+    letter-spacing: -1px;
+}
+
+.players {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   PLAYER LINK
+========================================================= */
+
+.player-link {
+    text-decoration: none;
+
+    color: inherit;
+}
+
+
+/* =========================================================
+   PLAYER CARD
+========================================================= */
+
+.player-card {
+    position: relative;
+
+    min-height: 205px;
+
+    overflow: hidden;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    text-align: left;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f5fcff
+        );
+
+    border: 1px solid rgba(22, 132, 170, 0.07);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(18, 59, 82, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.player-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -55px;
+    top: -55px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #dff6ff,
+            #bdeeff
+        );
+
+    transition: 0.4s ease;
+}
+
+.player-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #1684aa;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: 0.35s ease;
+}
+
+.player-card:hover {
+    transform: translateY(-9px);
+
+    border-color:
+        rgba(22, 132, 170, 0.15);
+
+    box-shadow:
+        0 22px 45px rgba(18, 59, 82, 0.13);
+}
+
+.player-card:hover::before {
+    transform: scale(1.2);
+}
+
+.player-card:hover::after {
+    transform: scaleX(1);
+}
+
+.player-card h3,
+.player-card p,
+.player-card .number,
+.player-card .view-profile {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   PLAYER NUMBER
+========================================================= */
+
+.number {
+    position: absolute !important;
+
+    top: 20px;
+    left: 25px;
+
+    display: block;
+
+    color: #b5eafa;
+
+    font-size: 72px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   PLAYER NAME
+========================================================= */
+
+.player-card h3 {
+    margin-top: 10px;
+
+    color: #147da4;
+
+    font-size: 17px;
+
+    letter-spacing: 0.5px;
+}
+
+.player-card p {
+    margin-top: 5px;
+
+    color: #7a8d96;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   GOALKEEPER
+========================================================= */
+
+.goalkeeper {
+    border: 2px solid rgba(22, 132, 170, 0.35);
+}
+
+
+/* =========================================================
+   VIEW PROFILE
+========================================================= */
+
+.view-profile {
+    display: block;
+
+    margin-top: 13px;
+
+    color: #1684aa;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 800;
+
+    opacity: 0;
+
+    transform: translateY(6px);
+
+    transition: 0.3s ease;
+}
+
+.player-card:hover .view-profile {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   PLAYER PROFILE
+========================================================= */
+
+.player-profile {
+    position: relative;
+
+    padding: 110px 7% 90px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(189, 238, 255, 0.9) 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #eefaff,
+            #dff6ff
+        );
+}
+
+.player-profile::before {
+    content: "05";
+
+    position: absolute;
+
+    right: 3%;
+    top: 3%;
+
+    color: rgba(20, 125, 164, 0.035);
+
+    font-size: 260px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   PROFILE TITLE
+========================================================= */
+
+.profile-title {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1350px;
+
+    margin: 0 auto 45px;
+}
+
+.profile-title p {
+    color: #1684aa;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: 800;
+}
+
+.profile-title h2 {
+    margin: 10px 0;
+
+    color: #123b52;
+
+    font-size: 52px;
+
+    line-height: 1;
+}
+
+.profile-title span {
+    color: #6d8794;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PROFILE CONTAINER
+========================================================= */
+
+.profile-container {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1350px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.15fr;
+
+    gap: 55px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   PLAYER PHOTO
+========================================================= */
+
+.player-photo {
+    position: relative;
+
+    height: 750px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #bdeeff,
+            #dff6ff
+        );
+
+    box-shadow:
+        0 25px 60px rgba(18, 59, 82, 0.16);
+}
+
+.player-photo::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(7, 35, 51, 0.88)
+        );
+}
+
+.player-photo::after {
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    width: 55px;
+    height: 4px;
+
+    z-index: 5;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.prayoga-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    display: block;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.player-photo:hover .prayoga-photo {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   PHOTO NUMBER
+========================================================= */
+
+.photo-number {
+    position: absolute;
+
+    top: 28px;
+    right: 30px;
+
+    z-index: 5;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 95px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   PHOTO NAME
+========================================================= */
+
+.photo-name {
+    position: absolute;
+
+    left: 38px;
+    bottom: 38px;
+
+    z-index: 5;
+
+    color: white;
+}
+
+.photo-name strong {
+    display: block;
+
+    font-size: 30px;
+
+    letter-spacing: 1px;
+}
+
+.photo-name span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   PLAYER INFO
+========================================================= */
+
+.player-info {
+    background:
+        rgba(255, 255, 255, 0.86);
+
+    border-radius: 24px;
+
+    padding: 55px;
+
+    box-shadow:
+        0 25px 60px rgba(18, 59, 82, 0.09);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.info-label {
+    color: #1684aa;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: 800;
+}
+
+.player-info h2 {
+    margin: 15px 0 30px;
+
+    color: #123b52;
+
+    font-size: 55px;
+
+    line-height: 1.02;
+
+    letter-spacing: -1px;
+}
+
+.info-line {
+    width: 75px;
+    height: 5px;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+
+    background: #1684aa;
+}
+
+
+/* =========================================================
+   INFO ITEM
+========================================================= */
+
+.info-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    padding: 18px 0;
+
+    border-bottom:
+        1px solid #dce9ee;
+}
+
+.info-icon {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #e5f5fb;
+
+    font-size: 22px;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(22, 132, 170, 0.05);
+}
+
+.info-item small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #4d89a6;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+}
+
+.info-item strong {
+    display: block;
+
+    color: #123b52;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   PROFILE FOOTER
+========================================================= */
+
+.profile-footer {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1350px;
+
+    margin: 35px auto 0;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid rgba(18, 59, 82, 0.1);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.profile-footer h3 {
+    color: #123b52;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+}
+
+.profile-footer span {
+    color: #1684aa;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MATCH CENTER
+========================================================= */
+
+.match {
+    padding: 110px 8% 120px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(189, 238, 255, 0.95) 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #e9f9ff,
+            #dff6ff
+        );
+}
+
+
+/* =========================================================
+   MATCH HEADER
+========================================================= */
+
+.match-header {
+    margin-bottom: 50px;
+
+    text-align: center;
+}
+
+.match-header h2 {
+    margin: 10px 0;
+
+    color: #147da4;
+
+    font-size: 48px;
+}
+
+.match-description {
+    color: #5d7887;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   NEXT MATCH
+========================================================= */
+
+.next-match {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 60px rgba(18, 59, 82, 0.12);
+}
+
+
+/* =========================================================
+   MATCH STATUS
+========================================================= */
+
+.match-status {
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background: #1684aa;
+
+    color: white;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px rgba(22, 132, 170, 0.2);
+}
+
+
+/* =========================================================
+   MATCH DATE
+========================================================= */
+
+.match-date span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #1684aa;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.match-date strong {
+    color: #123b52;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   TEAMS
+========================================================= */
+
+.teams {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 70px;
+
+    margin: 40px 0;
+}
+
+.team {
+    width: 190px;
+}
+
+
+/* =========================================================
+   MATCH TEAM LOGO
+========================================================= */
+
+.team-logo {
+    width: 105px;
+    height: 105px;
+
+    margin: auto auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1684aa,
+            #65c8e8
+        );
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 12px 30px rgba(22, 132, 170, 0.25);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   REAL DOA IBU LOGO
+========================================================= */
+
+.team-logo img {
+    width: 82%;
+    height: 82%;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 50%;
+
+    mix-blend-mode: multiply;
+
+    filter:
+        drop-shadow(
+            0 5px 10px rgba(18, 59, 82, 0.15)
+        );
+
+    transition:
+        transform 0.35s ease;
+}
+
+.team:hover .team-logo {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 35px rgba(22, 132, 170, 0.28);
+}
+
+.team:hover .team-logo img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   OPPONENT LOGO
+========================================================= */
+
+.team-logo.opponent {
+    background: #eef5f8;
+
+    color: #78909c;
+
+    border:
+        2px dashed #b7ccd5;
+
+    box-shadow: none;
+}
+
+.team-logo.opponent img {
+    display: none;
+}
+
+
+/* =========================================================
+   TEAM TEXT
+========================================================= */
+
+.team h3 {
+    margin-bottom: 5px;
+
+    color: #123b52;
+
+    font-size: 17px;
+}
+
+.team span {
+    color: #1684aa;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   VS
+========================================================= */
+
+.vs {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #123b52;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 10px 25px rgba(18, 59, 82, 0.18);
+}
+
+
+/* =========================================================
+   MATCH LOCATION
+========================================================= */
+
+.match-location {
+    padding-top: 25px;
+
+    border-top:
+        1px solid #e1edf2;
+
+    color: #55717e;
+}
+
+.match-location strong {
+    color: #123b52;
+
+    font-size: 13px;
+}
+
+.match-location p {
+    margin-top: 6px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MATCH HISTORY
+========================================================= */
+
+.match-history {
+    max-width: 950px;
+
+    margin: 80px auto 0;
+}
+
+.match-history > h3 {
+    margin: 8px 0 25px;
+
+    color: #147da4;
+
+    font-size: 32px;
+}
+
+.history-card {
+    display: grid;
+
+    grid-template-columns:
+        100px
+        1fr
+        80px
+        1fr
+        70px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 25px 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 30px rgba(18, 59, 82, 0.08);
+}
+
+.history-date strong {
+    display: block;
+
+    color: #123b52;
+}
+
+.history-date span {
+    color: #1684aa;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.history-team {
+    color: #123b52;
+
+    font-weight: 800;
+
+    text-align: right;
+}
+
+.opponent-text {
+    text-align: left;
+}
+
+.history-score {
+    color: #147da4;
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+    text-align: center;
+}
+
+.history-result {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #eef7fa;
+
+    color: #78909c;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+.no-match {
+    margin-top: 15px;
+
+    color: #718894;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery {
+    padding: 110px 8%;
+
+    text-align: center;
+
+    background: #f4fbff;
+}
+
+.gallery h2 {
+    margin: 10px 0 50px;
+
+    color: #123b52;
+
+    font-size: 44px;
+}
+
+.gallery-content {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1300px;
+
+    margin: auto;
+}
+
+.gallery-placeholder {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 65px 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f4fcff
+        );
+
+    border:
+        1px solid rgba(22, 132, 170, 0.07);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px rgba(18, 59, 82, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.gallery-placeholder::before {
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    right: -50px;
+    top: -50px;
+
+    border-radius: 50%;
+
+    background: #dff6ff;
+}
+
+.gallery-placeholder:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 22px 45px rgba(18, 59, 82, 0.12);
+}
+
+.gallery-placeholder span,
+.gallery-placeholder h3,
+.gallery-placeholder p {
+    position: relative;
+
+    z-index: 2;
+}
+
+.gallery-placeholder span {
+    font-size: 48px;
+}
+
+.gallery-placeholder h3 {
+    margin-top: 20px;
+
+    color: #126b8c;
+
+    font-size: 17px;
+}
+
+.gallery-placeholder p {
+    margin-top: 8px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    background: #123b52;
+
+    color: white;
+}
+
+footer p:first-child {
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+footer p:last-child {
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .players {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .profile-container {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 30px;
+    }
+
+    .player-photo {
+        height: 650px;
+    }
+
+    .player-info {
+        padding: 40px;
+    }
+
+    .player-info h2 {
+        font-size: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    /* HERO */
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+
+    /* SQUAD */
+
+    .players {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    /* PROFILE */
+
+    .profile-container {
+        grid-template-columns:
+            1fr;
+
+        gap: 30px;
+    }
+
+    .player-photo {
+        height: 600px;
+    }
+
+    .profile-title h2 {
+        font-size: 40px;
+    }
+
+    .player-info h2 {
+        font-size: 42px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-content {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .logo span {
+        font-size: 21px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 520px;
+
+        padding: 40px 20px;
+    }
+
+    .hero-logo {
+        width: 125px;
+        height: 125px;
+
+        margin-bottom: 20px;
+    }
+
+    .small-title {
+        font-size: 10px;
+
+        letter-spacing: 4px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+
+        letter-spacing: 2px;
+    }
+
+    .slogan {
+        font-size: 12px;
+
+        letter-spacing: 2px;
+    }
+
+    .button {
+        padding: 14px 28px;
+
+        font-size: 12px;
+    }
+
+
+    /* SQUAD */
+
+    .squad {
+        padding: 75px 5%;
+    }
+
+    .squad h2,
+    .gallery h2 {
+        font-size: 35px;
+    }
+
+    .players {
+        grid-template-columns:
+            1fr;
+    }
+
+    .player-card {
+        min-height: 180px;
+    }
+
+    .view-profile {
+        opacity: 1;
+
+        transform: none;
+    }
+
+
+    /* PROFILE */
+
+    .player-profile {
+        padding: 75px 5%;
+    }
+
+    .profile-title h2 {
+        font-size: 32px;
+    }
+
+    .player-photo {
+        height: 500px;
+
+        border-radius: 20px;
+    }
+
+    .photo-name {
+        left: 25px;
+        bottom: 25px;
+    }
+
+    .photo-name strong {
+        font-size: 21px;
+    }
+
+    .photo-name span {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+    .photo-number {
+        font-size: 65px;
+
+        right: 20px;
+    }
+
+    .player-info {
+        padding: 30px 25px;
+
+        border-radius: 20px;
+    }
+
+    .player-info h2 {
+        font-size: 35px;
+    }
+
+    .info-item {
+        gap: 15px;
+    }
+
+    .info-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 19px;
+    }
+
+    .profile-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    /* =====================================================
+       MATCH MOBILE
+    ===================================================== */
+
+    .match {
+        padding: 75px 5% 90px;
+    }
+
+    .match-header h2 {
+        font-size: 38px;
+    }
+
+    .match-description {
+        font-size: 12px;
+    }
+
+    .next-match {
+        padding: 30px 15px;
+    }
+
+
+    /* TEAMS MOBILE */
+
+    .teams {
+        gap: 8px;
+
+        margin: 35px 0;
+    }
+
+    .team {
+        width: 100px;
+    }
+
+    .team-logo {
+        width: 70px;
+        height: 70px;
+
+        font-size: 20px;
+    }
+
+    .team-logo img {
+        width: 82%;
+        height: 82%;
+    }
+
+    .team h3 {
+        font-size: 11px;
+    }
+
+    .team span {
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+    .vs {
+        width: 43px;
+        height: 43px;
+
+        font-size: 11px;
+    }
+
+
+    /* MATCH LOCATION */
+
+    .match-location {
+        padding-top: 20px;
+    }
+
+    .match-location strong {
+        font-size: 12px;
+    }
+
+    .match-location p {
+        font-size: 11px;
+    }
+
+
+    /* MATCH HISTORY */
+
+    .match-history {
+        margin-top: 60px;
+    }
+
+    .history-card {
+        grid-template-columns:
+            1fr;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .history-team,
+    .opponent-text {
+        text-align: center;
+    }
+
+
+    /* GALLERY */
+
+    .gallery {
+        padding: 75px 5%;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-logo {
+        width: 110px;
+        height: 110px;
+    }
+
+    .slogan {
+        font-size: 10px;
+    }
+
+    nav {
+        gap: 9px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .profile-title h2 {
+        font-size: 28px;
+    }
+
+    .player-info h2 {
+        font-size: 30px;
+    }
+
+    .team {
+        width: 90px;
+    }
+
+    .team-logo {
+        width: 62px;
+        height: 62px;
+    }
+
+    .vs {
+        width: 40px;
+        height: 40px;
+    }
+
+}/* =========================================================
+   PLAYER CARD PHOTO
+========================================================= */
+
+.player-card-photo {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    z-index: 0;
+
+    transition: transform 0.5s ease;
+}
+
+.player-card:hover .player-card-photo {
+    transform: scale(1.05);
+}
+
+/* GRADIENT DI ATAS FOTO */
+
+.player-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 65%;
+
+    background: linear-gradient(
+        transparent,
+        rgba(8, 36, 52, 0.9)
+    );
+
+    z-index: 1;
+
+    transform: none;
+}
+
+/* INFORMASI PEMAIN */
+
+.player-card-info {
+    position: relative;
+
+    z-index: 3;
+}
+
+/* WARNA TEKS KETIKA ADA FOTO */
+
+.player-card:has(.player-card-photo) h3 {
+    color: white;
+}
+
+.player-card:has(.player-card-photo) p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.player-card:has(.player-card-photo) .view-profile {
+    color: #bdeeff;
+}
+
+/* NOMOR DI ATAS FOTO */
+
+.player-card:has(.player-card-photo) .number {
+    z-index: 3;
+
+    color: rgba(255, 255, 255, 0.75);
+}
