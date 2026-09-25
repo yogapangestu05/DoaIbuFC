@@ -2184,11 +2184,11 @@
 </section>
 
 
-<<!-- =========================
+<!-- =========================
      GALLERY
 ========================== -->
 
-<<section class="gallery" id="gallery">
+<section class="gallery" id="gallery">
 
     <div class="gallery-header">
 
@@ -2213,110 +2213,157 @@
 
         <!-- GALLERY 01 -->
 
-        <div class="gallery-item">
+        <!-- GALLERY 01 -->
+<div class="gallery-item" onclick="openGallery(0)">
 
-            <img
-                src="Team.jpeg"
-                alt="Doa Ibu FC"
-            >
+    <img
+        src="Team.jpeg"
+        alt="Doa Ibu FC Team"
+    >
 
-            <span class="gallery-number">
-                01
-            </span>
+    <span class="gallery-number">
+        01
+    </span>
 
-            <span class="gallery-line"></span>
+    <span class="gallery-line"></span>
 
-            <div class="gallery-overlay">
+    <div class="gallery-overlay">
 
-                <span>
-                    DOA IBU FC
-                </span>
+        <span>
+            DOA IBU FC
+        </span>
 
-                <h3>
-                    Team Moments
-                </h3>
+        <h3>
+            Team Moments
+        </h3>
 
-                <p>
-                    Matchday • Training • Team
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- GALLERY 02 -->
-
-        <div class="gallery-item">
-
-            <img
-                src="matchday1.jpeg"
-                alt="Doa Ibu FC Matchday"
-            >
-
-            <span class="gallery-number">
-                02
-            </span>
-
-            <span class="gallery-line"></span>
-
-            <div class="gallery-overlay">
-
-                <span>
-                    MATCHDAY
-                </span>
-
-                <h3>
-                    Game Day
-                </h3>
-
-                <p>
-                    Competition • Passion • Fight
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- GALLERY 03 -->
-
-        <div class="gallery-item">
-
-            <img
-                src="jersey.jpeg"
-                alt="Doa Ibu FC Jersey"
-            >
-
-            <span class="gallery-number">
-                03
-            </span>
-
-            <span class="gallery-line"></span>
-
-            <div class="gallery-overlay">
-
-                <span>
-                    OFFICIAL KIT
-                </span>
-
-                <h3>
-                    Official Jersey
-                </h3>
-
-                <p>
-                    Season 2026 / 2027
-                </p>
-
-            </div>
-
-        </div>
-
+        <p>
+            Matchday • Training • Team
+        </p>
 
     </div>
 
-</section>
+</div>
 
+
+      <!-- GALLERY 02 -->
+<div class="gallery-item" onclick="openGallery(1)">
+
+    <img
+        src="matchday1.jpeg"
+        alt="Doa Ibu FC Matchday"
+    >
+
+    <span class="gallery-number">
+        02
+    </span>
+
+    <span class="gallery-line"></span>
+
+    <div class="gallery-overlay">
+
+        <span>
+            MATCHDAY
+        </span>
+
+        <h3>
+            Game Day
+        </h3>
+
+        <p>
+            Competition • Passion • Fight
+        </p>
+
+    </div>
+
+</div>
+
+       <!-- GALLERY 03 -->
+<div class="gallery-item" onclick="openGallery(2)">
+
+    <img
+        src="jersey.jpeg"
+        alt="Doa Ibu FC Jersey"
+    >
+
+    <span class="gallery-number">
+        03
+    </span>
+
+    <span class="gallery-line"></span>
+
+    <div class="gallery-overlay">
+
+        <span>
+            OFFICIAL KIT
+        </span>
+
+        <h3>
+            Official Jersey
+        </h3>
+
+        <p>
+            Season 2026 / 2027
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+<!-- =========================
+     GALLERY LIGHTBOX
+========================== -->
+
+<div class="gallery-lightbox" id="galleryLightbox">
+
+    <button
+        class="lightbox-close"
+        onclick="closeGallery()"
+        aria-label="Close gallery"
+    >
+        ×
+    </button>
+
+    <button
+        class="lightbox-prev"
+        onclick="changeGallery(-1)"
+        aria-label="Previous image"
+    >
+        &#10094;
+    </button>
+
+    <div class="lightbox-content">
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="Doa Ibu FC Gallery"
+        >
+
+        <div class="lightbox-caption">
+
+            <span id="lightboxCategory">
+                DOA IBU FC
+            </span>
+
+            <h3 id="lightboxTitle">
+                Team Moments
+            </h3>
+
+        </div>
+
+    </div>
+
+    <button
+        class="lightbox-next"
+        onclick="changeGallery(1)"
+        aria-label="Next image"
+    >
+        &#10095;
+    </button>
+
+</div>
 
 <!-- =========================
      FOOTER
