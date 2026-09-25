@@ -2364,7 +2364,157 @@
     </button>
 
 </div>
+<script>
 
+const galleryImages = [
+    {
+        src: "Team.jpeg",
+        category: "DOA IBU FC",
+        title: "Team Moments"
+    },
+
+    {
+        src: "matchday1.jpeg",
+        category: "MATCHDAY",
+        title: "Game Day"
+    },
+
+    {
+        src: "jersey.jpeg",
+        category: "OFFICIAL KIT",
+        title: "Official Jersey"
+    }
+];
+
+let currentGallery = 0;
+
+
+function openGallery(index) {
+
+    currentGallery = index;
+
+    const lightbox =
+        document.getElementById("galleryLightbox");
+
+    lightbox.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+    updateGallery();
+
+}
+
+
+function closeGallery() {
+
+    const lightbox =
+        document.getElementById("galleryLightbox");
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+function changeGallery(direction) {
+
+    currentGallery += direction;
+
+    if (currentGallery < 0) {
+        currentGallery =
+            galleryImages.length - 1;
+    }
+
+    if (currentGallery >= galleryImages.length) {
+        currentGallery = 0;
+    }
+
+    updateGallery();
+
+}
+
+
+function updateGallery() {
+
+    const image =
+        document.getElementById("lightboxImage");
+
+    const category =
+        document.getElementById("lightboxCategory");
+
+    const title =
+        document.getElementById("lightboxTitle");
+
+    const current =
+        galleryImages[currentGallery];
+
+    image.src = current.src;
+
+    image.alt = current.title;
+
+    category.textContent =
+        current.category;
+
+    title.textContent =
+        current.title;
+
+}
+
+
+/* =========================================================
+   KEYBOARD CONTROL
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        const lightbox =
+            document.getElementById("galleryLightbox");
+
+        if (
+            !lightbox.classList.contains("active")
+        ) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+            closeGallery();
+        }
+
+        if (event.key === "ArrowLeft") {
+            changeGallery(-1);
+        }
+
+        if (event.key === "ArrowRight") {
+            changeGallery(1);
+        }
+
+    }
+);
+
+
+/* =========================================================
+   CLICK OUTSIDE IMAGE
+========================================================= */
+
+document
+    .getElementById("galleryLightbox")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+                closeGallery();
+            }
+
+        }
+    );
+
+</script>
 <!-- =========================
      FOOTER
 ========================== -->
