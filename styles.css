@@ -1,7 +1,7 @@
 /* =========================================================
    DOA IBU FC — OFFICIAL WEBSITE
    PREMIUM FUTSAL CLUB STYLE
-   CLEAN + RESPONSIVE VERSION
+   CLEAN + RESPONSIVE + OPTIMIZED
 ========================================================= */
 
 
@@ -33,6 +33,12 @@ a {
 
 img {
     max-width: 100%;
+    display: block;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -80,6 +86,8 @@ img {
     gap: 12px;
 
     position: relative;
+
+    flex-shrink: 0;
 }
 
 .logo img {
@@ -146,7 +154,7 @@ nav a {
     font-size: 14px;
     font-weight: 700;
 
-    transition: 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 nav a::after {
@@ -164,7 +172,7 @@ nav a::after {
 
     background: #1684aa;
 
-    transition: 0.3s ease;
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
@@ -225,6 +233,8 @@ nav a:hover::after {
     border-radius: 50%;
 
     border: 1px solid rgba(22, 132, 170, 0.1);
+
+    pointer-events: none;
 }
 
 .hero::after {
@@ -241,6 +251,8 @@ nav a:hover::after {
     border-radius: 50%;
 
     border: 1px solid rgba(22, 132, 170, 0.1);
+
+    pointer-events: none;
 }
 
 
@@ -253,6 +265,7 @@ nav a:hover::after {
 
     z-index: 2;
 
+    width: 100%;
     max-width: 900px;
 
     padding: 40px 20px;
@@ -261,7 +274,6 @@ nav a:hover::after {
 }
 
 @keyframes heroFade {
-
     from {
         opacity: 0;
         transform: translateY(25px);
@@ -271,7 +283,6 @@ nav a:hover::after {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
 
@@ -287,7 +298,7 @@ nav a:hover::after {
 
     border-radius: 50%;
 
-    margin-bottom: 25px;
+    margin: 0 auto 25px;
 
     mix-blend-mode: multiply;
 
@@ -301,7 +312,6 @@ nav a:hover::after {
 }
 
 @keyframes logoFloat {
-
     0%,
     100% {
         transform: translateY(0);
@@ -310,7 +320,6 @@ nav a:hover::after {
     50% {
         transform: translateY(-7px);
     }
-
 }
 
 
@@ -368,7 +377,7 @@ nav a:hover::after {
 
     background: #1684aa;
 
-    color: white;
+    color: #ffffff;
 
     text-decoration: none;
 
@@ -538,7 +547,7 @@ nav a:hover::after {
             #bdeeff
         );
 
-    transition: 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .player-card:not(:has(.player-card-photo)):hover::before {
@@ -593,6 +602,8 @@ nav a:hover::after {
         );
 
     z-index: 1;
+
+    pointer-events: none;
 }
 
 
@@ -602,6 +613,7 @@ nav a:hover::after {
 
 .player-card-info {
     position: relative;
+
     z-index: 3;
 }
 
@@ -610,6 +622,7 @@ nav a:hover::after {
 .player-card .number,
 .player-card .view-profile {
     position: relative;
+
     z-index: 3;
 }
 
@@ -667,7 +680,7 @@ nav a:hover::after {
 }
 
 .player-card:has(.player-card-photo) h3 {
-    color: white;
+    color: #ffffff;
 }
 
 .player-card:has(.player-card-photo) p {
@@ -696,7 +709,9 @@ nav a:hover::after {
 
     transform: translateY(6px);
 
-    transition: 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 .player-card:hover .view-profile {
@@ -758,6 +773,8 @@ nav a:hover::after {
     font-weight: 900;
 
     line-height: 1;
+
+    pointer-events: none;
 }
 
 
@@ -867,6 +884,8 @@ nav a:hover::after {
             transparent 55%,
             rgba(7, 35, 51, 0.88)
         );
+
+    pointer-events: none;
 }
 
 .player-photo::after {
@@ -885,6 +904,8 @@ nav a:hover::after {
     border-radius: 10px;
 
     background: #ffffff;
+
+    pointer-events: none;
 }
 
 .prayoga-photo {
@@ -925,6 +946,8 @@ nav a:hover::after {
     font-weight: 900;
 
     line-height: 1;
+
+    pointer-events: none;
 }
 
 
@@ -940,7 +963,7 @@ nav a:hover::after {
 
     z-index: 5;
 
-    color: white;
+    color: #ffffff;
 }
 
 .photo-name strong {
@@ -1209,7 +1232,7 @@ nav a:hover::after {
 
     background: #1684aa;
 
-    color: white;
+    color: #ffffff;
 
     font-size: 10px;
 
@@ -1289,7 +1312,7 @@ nav a:hover::after {
             #65c8e8
         );
 
-    color: white;
+    color: #ffffff;
 
     font-size: 25px;
 
@@ -1389,6 +1412,8 @@ nav a:hover::after {
     width: 55px;
     height: 55px;
 
+    flex-shrink: 0;
+
     display: flex;
 
     align-items: center;
@@ -1398,7 +1423,7 @@ nav a:hover::after {
 
     background: #123b52;
 
-    color: white;
+    color: #ffffff;
 
     font-size: 13px;
 
@@ -1469,7 +1494,7 @@ nav a:hover::after {
 
     padding: 25px 30px;
 
-    background: white;
+    background: #ffffff;
 
     border-radius: 18px;
 
@@ -1542,21 +1567,26 @@ nav a:hover::after {
 
 /* =========================================================
    GALLERY
-   PREMIUM ASYMMETRIC
+   PREMIUM EDITORIAL ASYMMETRIC
 ========================================================= */
 
 .gallery {
     position: relative;
 
-    padding: 115px 7% 125px;
+    padding: 110px 7% 125px;
 
     text-align: center;
 
     background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(189, 238, 255, 0.35),
+            transparent 28%
+        ),
         linear-gradient(
             180deg,
             #f4fbff 0%,
-            #eef9fd 100%
+            #eef8fc 100%
         );
 
     overflow: hidden;
@@ -1572,10 +1602,10 @@ nav a:hover::after {
 
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    width: 520px;
+    height: 520px;
 
-    top: -270px;
+    top: -300px;
     right: -220px;
 
     border-radius: 50%;
@@ -1591,11 +1621,11 @@ nav a:hover::after {
 
     position: absolute;
 
-    width: 350px;
-    height: 350px;
+    width: 380px;
+    height: 380px;
 
-    bottom: -200px;
-    left: -180px;
+    bottom: -230px;
+    left: -210px;
 
     border-radius: 50%;
 
@@ -1613,32 +1643,50 @@ nav a:hover::after {
 .gallery-header {
     position: relative;
 
-    z-index: 2;
+    z-index: 5;
 
-    max-width: 800px;
+    display: block;
+
+    max-width: 760px;
 
     margin: 0 auto 60px;
+
+    text-align: center;
 }
 
 .gallery-header .section-label {
     display: block;
 
     margin-bottom: 12px;
+
+    color: #1684aa;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
 }
 
 .gallery-header h2 {
+    display: block;
+
     margin: 0;
 
     color: #123b52;
 
-    font-size: clamp(42px, 5vw, 58px);
+    font-size: clamp(42px, 5vw, 60px);
 
     font-weight: 900;
 
-    letter-spacing: -1px;
+    line-height: 1;
+
+    letter-spacing: -2px;
 }
 
 .gallery-header p {
+    display: block;
+
     max-width: 600px;
 
     margin: 18px auto 0;
@@ -1652,132 +1700,97 @@ nav a:hover::after {
 
 
 /* =========================================================
-   PREMIUM ASYMMETRIC GRID
+   GALLERY GRID
 ========================================================= */
 
 .gallery-content {
     position: relative;
 
-    z-index: 2;
+    z-index: 5;
 
-    max-width: 1350px;
+    max-width: 1380px;
 
-    margin: auto;
+    margin: 0 auto;
 
     display: grid;
 
     grid-template-columns:
-        1.25fr
-        0.85fr
-        0.95fr;
+        1.05fr
+        1.35fr;
 
     grid-template-rows:
-        260px
-        260px;
+        270px
+        270px;
 
-    gap: 22px;
+    gap: 24px;
 
     text-align: left;
 }
 
 
 /* =========================================================
-   GALLERY ITEMS
+   GALLERY ITEM
 ========================================================= */
 
 .gallery-item {
     position: relative;
 
+    width: 100%;
     height: 100%;
 
     overflow: hidden;
 
     border-radius: 26px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #dff6ff,
-            #c5eaf7
-        );
+    background: #dff6ff;
 
     cursor: pointer;
 
     box-shadow:
-        0 18px 45px
-        rgba(18, 59, 82, 0.10);
+        0 18px 45px rgba(18, 59, 82, 0.10);
+
+    transform: translateZ(0);
 
     transition:
-        transform 0.45s ease,
-        box-shadow 0.45s ease;
+        transform 0.45s cubic-bezier(.2,.7,.2,1),
+        box-shadow 0.45s cubic-bezier(.2,.7,.2,1);
 }
 
 
 /* =========================================================
-   ASYMMETRIC POSITIONS
+   GALLERY POSITIONS
 ========================================================= */
-
-/*
-   FOTO 1
-   Besar di kiri, memenuhi dua baris
-*/
 
 .gallery-item:first-child {
     grid-column: 1;
 
     grid-row: 1 / 3;
 
-    min-height: 542px;
+    min-height: 564px;
 }
-
-
-/*
-   FOTO 2
-   Kecil di tengah atas
-*/
 
 .gallery-item:nth-child(2) {
     grid-column: 2;
 
     grid-row: 1;
-
-    transform-origin: center bottom;
 }
 
-
-/*
-   FOTO 3
-   Lebih lebar di kanan bawah
-*/
-
 .gallery-item:nth-child(3) {
-    grid-column: 2 / 4;
+    grid-column: 2;
 
     grid-row: 2;
-
-    min-height: 260px;
-}
-
-
-/*
-   Sedikit offset agar layout
-   terasa lebih editorial
-*/
-
-.gallery-item:nth-child(2) {
-    margin-top: 14px;
-}
-
-.gallery-item:nth-child(3) {
-    margin-left: -5px;
 }
 
 
 /* =========================================================
-   IMAGE
+   GALLERY IMAGE
 ========================================================= */
 
 .gallery-item img {
+    position: absolute;
+
+    inset: 0;
+
     width: 100%;
     height: 100%;
 
@@ -1785,20 +1798,20 @@ nav a:hover::after {
 
     object-fit: cover;
 
-    object-position: center;
-
     transition:
-        transform 0.8s
-        cubic-bezier(.2,.7,.2,1);
+        transform 0.8s cubic-bezier(.2,.7,.2,1),
+        filter 0.5s ease;
 }
 
 
 /* =========================================================
-   IMAGE POSITION
+   GALLERY IMAGE POSITION
 ========================================================= */
 
 .gallery-item:first-child img {
     object-position: center center;
+
+    filter: saturate(0.92);
 }
 
 .gallery-item:nth-child(2) img {
@@ -1806,12 +1819,12 @@ nav a:hover::after {
 }
 
 .gallery-item:nth-child(3) img {
-    object-position: center center;
+    object-position: center 48%;
 }
 
 
 /* =========================================================
-   DARK PREMIUM OVERLAY
+   GALLERY PREMIUM OVERLAY
 ========================================================= */
 
 .gallery-item::after {
@@ -1821,112 +1834,71 @@ nav a:hover::after {
 
     inset: 0;
 
-    background:
-        linear-gradient(
-            to top,
-            rgba(8, 36, 52, 0.96) 0%,
-            rgba(8, 36, 52, 0.64) 30%,
-            rgba(8, 36, 52, 0.18) 67%,
-            rgba(8, 36, 52, 0.02) 100%
-        );
-
     z-index: 1;
 
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 30, 43, 0.02) 0%,
+            rgba(7, 30, 43, 0.08) 35%,
+            rgba(7, 30, 43, 0.78) 78%,
+            rgba(7, 30, 43, 0.96) 100%
+        );
+
+    pointer-events: none;
+
     transition:
-        background 0.4s ease;
+        background 0.45s ease;
 }
 
 
 /* =========================================================
-   HOVER
+   GALLERY HOVER
 ========================================================= */
 
 .gallery-item:hover {
-    transform:
-        translateY(-8px);
+    transform: translateY(-7px);
 
     box-shadow:
-        0 30px 65px
-        rgba(18, 59, 82, 0.18);
-}
-
-.gallery-item:nth-child(2):hover {
-    transform:
-        translateY(6px);
+        0 30px 70px rgba(18, 59, 82, 0.18);
 }
 
 .gallery-item:hover img {
-    transform:
-        scale(1.065);
+    transform: scale(1.055);
+
+    filter: saturate(1.02);
 }
 
 .gallery-item:hover::after {
     background:
         linear-gradient(
-            to top,
-            rgba(8, 36, 52, 0.98) 0%,
-            rgba(8, 36, 52, 0.58) 42%,
-            rgba(8, 36, 52, 0.08) 100%
+            180deg,
+            rgba(7, 30, 43, 0.04) 0%,
+            rgba(7, 30, 43, 0.12) 35%,
+            rgba(7, 30, 43, 0.82) 80%,
+            rgba(7, 30, 43, 0.97) 100%
         );
 }
 
 
 /* =========================================================
-   GALLERY NUMBER
-========================================================= */
-
-.gallery-number {
-    position: absolute;
-
-    top: 22px;
-    right: 28px;
-
-    z-index: 3;
-
-    color:
-        rgba(255, 255, 255, 0.72);
-
-    font-size: 58px;
-
-    font-weight: 900;
-
-    line-height: 1;
-
-    letter-spacing: -2px;
-}
-
-
-/* FEATURE NUMBER */
-
-.gallery-item:first-child .gallery-number {
-    font-size: 105px;
-
-    top: 25px;
-    right: 32px;
-
-    color:
-        rgba(255, 255, 255, 0.18);
-}
-
-
-/* =========================================================
-   TOP LINE
+   GALLERY TOP DETAIL LINE
 ========================================================= */
 
 .gallery-item .gallery-line {
     position: absolute;
 
-    top: 28px;
-    left: 28px;
+    top: 27px;
+    left: 29px;
 
-    width: 48px;
+    width: 52px;
     height: 3px;
+
+    z-index: 4;
 
     border-radius: 20px;
 
-    background: white;
-
-    z-index: 3;
+    background: #ffffff;
 
     transition:
         width 0.4s ease;
@@ -1938,7 +1910,42 @@ nav a:hover::after {
 
 
 /* =========================================================
-   OVERLAY CONTENT
+   GALLERY NUMBER
+========================================================= */
+
+.gallery-number {
+    position: absolute;
+
+    top: 20px;
+    right: 27px;
+
+    z-index: 4;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    font-size: 58px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    pointer-events: none;
+}
+
+.gallery-item:first-child .gallery-number {
+    top: 24px;
+    right: 30px;
+
+    font-size: 88px;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* =========================================================
+   GALLERY OVERLAY CONTENT
 ========================================================= */
 
 .gallery-overlay {
@@ -1946,15 +1953,12 @@ nav a:hover::after {
 
     left: 30px;
     right: 30px;
-    bottom: 30px;
+    bottom: 29px;
 
-    z-index: 3;
+    z-index: 4;
 
-    color: white;
+    color: #ffffff;
 }
-
-
-/* FEATURE CARD */
 
 .gallery-item:first-child .gallery-overlay {
     left: 38px;
@@ -1963,7 +1967,7 @@ nav a:hover::after {
 }
 
 .gallery-overlay span {
-    display: inline-block;
+    display: block;
 
     margin-bottom: 9px;
 
@@ -1979,26 +1983,25 @@ nav a:hover::after {
 .gallery-overlay h3 {
     margin: 0;
 
-    color: white;
+    color: #ffffff;
 
-    font-size: 24px;
+    font-size: 25px;
 
     font-weight: 900;
 
-    letter-spacing: 0.3px;
-}
-
-.gallery-item:first-child .gallery-overlay h3 {
-    font-size: 32px;
+    line-height: 1.1;
 
     letter-spacing: 0;
 }
 
-.gallery-overlay p {
-    margin-top: 7px;
+.gallery-item:first-child .gallery-overlay h3 {
+    font-size: 34px;
+}
 
-    color:
-        rgba(255, 255, 255, 0.78);
+.gallery-overlay p {
+    margin-top: 8px;
+
+    color: rgba(255, 255, 255, 0.78);
 
     font-size: 12px;
 
@@ -2007,7 +2010,7 @@ nav a:hover::after {
 
 
 /* =========================================================
-   PREMIUM CORNER DETAIL
+   GALLERY FEATURE DETAIL
 ========================================================= */
 
 .gallery-item:first-child::before {
@@ -2015,13 +2018,12 @@ nav a:hover::after {
 
     position: absolute;
 
-    left: 30px;
-    top: 28px;
+    left: 28px;
+    top: 24px;
 
-    z-index: 3;
+    z-index: 2;
 
-    color:
-        rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.08);
 
     font-size: 150px;
 
@@ -2030,175 +2032,6 @@ nav a:hover::after {
     line-height: 1;
 
     pointer-events: none;
-}
-
-
-/* =========================================================
-   GALLERY — TABLET
-========================================================= */
-
-@media (max-width: 1100px) {
-
-    .gallery {
-        padding:
-            90px 5% 105px;
-    }
-
-    .gallery-content {
-        grid-template-columns:
-            1.15fr
-            0.85fr
-            0.95fr;
-
-        grid-template-rows:
-            235px
-            235px;
-
-        gap: 18px;
-    }
-
-    .gallery-item:first-child {
-        min-height: 488px;
-    }
-
-    .gallery-item:nth-child(2) {
-        margin-top: 8px;
-    }
-
-    .gallery-item:nth-child(3) {
-        margin-left: -3px;
-    }
-
-    .gallery-item:first-child .gallery-overlay h3 {
-        font-size: 27px;
-    }
-
-}
-
-
-/* =========================================================
-   GALLERY — MOBILE
-========================================================= */
-
-@media (max-width: 800px) {
-
-    .gallery {
-        padding:
-            80px 5% 90px;
-    }
-
-    .gallery-header {
-        margin-bottom: 38px;
-    }
-
-    .gallery-header h2 {
-        font-size: 38px;
-    }
-
-    .gallery-header p {
-        font-size: 12px;
-    }
-
-    .gallery-content {
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        grid-template-rows:
-            380px
-            260px
-            260px;
-
-        gap: 18px;
-    }
-
-
-    /* RESET DESKTOP POSITIONS */
-
-    .gallery-item,
-    .gallery-item:first-child,
-    .gallery-item:nth-child(2),
-    .gallery-item:nth-child(3) {
-
-        grid-column: auto;
-
-        grid-row: auto;
-
-        min-height: 0;
-
-        height: 100%;
-
-        margin: 0;
-    }
-
-
-    /* FEATURE */
-
-    .gallery-item:first-child {
-        height: 380px;
-    }
-
-    .gallery-item:first-child .gallery-overlay {
-        left: 24px;
-        right: 24px;
-        bottom: 24px;
-    }
-
-    .gallery-item:first-child .gallery-overlay h3 {
-        font-size: 25px;
-    }
-
-    .gallery-item:first-child .gallery-number {
-        font-size: 70px;
-
-        right: 22px;
-    }
-
-
-    /* OTHER CARDS */
-
-    .gallery-overlay {
-        left: 22px;
-        right: 22px;
-        bottom: 22px;
-    }
-
-    .gallery-overlay h3 {
-        font-size: 20px;
-    }
-
-    .gallery-number {
-        font-size: 45px;
-
-        top: 18px;
-        right: 20px;
-    }
-
-}
-
-
-/* =========================================================
-   EXTRA SMALL GALLERY
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .gallery-content {
-        grid-template-rows:
-            330px
-            240px
-            240px;
-    }
-
-    .gallery-item:first-child {
-        height: 330px;
-    }
-
-    .gallery-item:first-child .gallery-overlay h3 {
-        font-size: 22px;
-    }
-
 }
 
 
@@ -2213,7 +2046,7 @@ footer {
 
     background: #123b52;
 
-    color: white;
+    color: #ffffff;
 }
 
 footer p:first-child {
@@ -2235,15 +2068,20 @@ footer p:last-child {
 
 
 /* =========================================================
-   TABLET — GENERAL
+   TABLET — 1100px
 ========================================================= */
 
 @media (max-width: 1100px) {
+
+    /* SQUAD */
 
     .players {
         grid-template-columns:
             repeat(3, 1fr);
     }
+
+
+    /* PROFILE */
 
     .profile-container {
         grid-template-columns:
@@ -2264,11 +2102,41 @@ footer p:last-child {
         font-size: 45px;
     }
 
+
+    /* GALLERY */
+
+    .gallery {
+        padding:
+            90px 5% 105px;
+    }
+
+    .gallery-header {
+        margin-bottom: 45px;
+    }
+
+    .gallery-content {
+        grid-template-columns:
+            1fr 1.15fr;
+
+        grid-template-rows:
+            240px
+            240px;
+
+        gap: 20px;
+    }
+
+    .gallery-item:first-child {
+        min-height: 500px;
+    }
+
+    .gallery-item:first-child .gallery-overlay h3 {
+        font-size: 28px;
+    }
 }
 
 
 /* =========================================================
-   TABLET / MOBILE
+   TABLET — 900px
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -2323,12 +2191,151 @@ footer p:last-child {
     .player-info h2 {
         font-size: 42px;
     }
-
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE — 800px
+========================================================= */
+
+@media (max-width: 800px) {
+
+    /* GALLERY */
+
+    .gallery {
+        padding:
+            80px 5% 90px;
+    }
+
+    .gallery-content {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            380px
+            260px
+            260px;
+
+        gap: 18px;
+    }
+
+    .gallery-item,
+    .gallery-item:first-child,
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3) {
+        grid-column: auto;
+
+        grid-row: auto;
+
+        width: 100%;
+
+        min-height: 0;
+
+        height: 100%;
+
+        margin: 0;
+
+        border-radius: 20px;
+    }
+
+    .gallery-item:first-child .gallery-overlay {
+        left: 24px;
+        right: 24px;
+        bottom: 24px;
+    }
+
+    .gallery-item:first-child .gallery-overlay h3 {
+        font-size: 25px;
+    }
+
+    .gallery-item:first-child .gallery-number {
+        font-size: 70px;
+
+        right: 22px;
+    }
+
+    .gallery-overlay {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 20px;
+    }
+
+    .gallery-number {
+        font-size: 45px;
+
+        top: 18px;
+        right: 20px;
+    }
+
+    .gallery-item:first-child::before {
+        font-size: 110px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* LIGHTBOX */
+
+    .gallery-lightbox {
+        padding: 20px;
+    }
+
+    .lightbox-content {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .lightbox-content img {
+        max-width: 100%;
+
+        max-height: 70vh;
+
+        border-radius: 10px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 25px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 42px;
+        height: 42px;
+
+        font-size: 17px;
+    }
+
+    .lightbox-prev {
+        left: 12px;
+    }
+
+    .lightbox-next {
+        right: 12px;
+    }
+
+    .lightbox-caption h3 {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 600px
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -2413,8 +2420,7 @@ footer p:last-child {
         padding: 75px 5%;
     }
 
-    .squad h2,
-    .gallery h2 {
+    .squad h2 {
         font-size: 35px;
     }
 
@@ -2604,6 +2610,28 @@ footer p:last-child {
         padding: 75px 5%;
     }
 
+    .gallery-header {
+        margin-bottom: 35px;
+    }
+
+    .gallery-header .section-label {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .gallery-header h2 {
+        font-size: 39px;
+
+        letter-spacing: -1px;
+    }
+
+    .gallery-header p {
+        margin-top: 14px;
+
+        font-size: 12px;
+    }
+
     .gallery-item {
         border-radius: 18px;
     }
@@ -2617,15 +2645,27 @@ footer p:last-child {
     .gallery-overlay h3 {
         font-size: 18px;
     }
-
 }
 
 
 /* =========================================================
-   EXTRA SMALL DEVICES
+   EXTRA SMALL — 380px
 ========================================================= */
 
 @media (max-width: 380px) {
+
+    /* NAVIGATION */
+
+    nav {
+        gap: 9px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+
+    /* HERO */
 
     .hero h1 {
         font-size: 36px;
@@ -2640,13 +2680,8 @@ footer p:last-child {
         font-size: 10px;
     }
 
-    nav {
-        gap: 9px;
-    }
 
-    nav a {
-        font-size: 10px;
-    }
+    /* PROFILE */
 
     .profile-title h2 {
         font-size: 28px;
@@ -2655,6 +2690,9 @@ footer p:last-child {
     .player-info h2 {
         font-size: 30px;
     }
+
+
+    /* TEAMS */
 
     .team {
         width: 90px;
@@ -2670,10 +2708,31 @@ footer p:last-child {
         height: 40px;
     }
 
+
+    /* GALLERY */
+
+    .gallery-content {
+        grid-template-rows:
+            330px
+            240px
+            240px;
+    }
+
+    .gallery-header h2 {
+        font-size: 34px;
+    }
+
     .gallery-item {
         height: 270px;
     }
 
+    .gallery-item:first-child {
+        height: 330px;
+    }
+
+    .gallery-item:first-child .gallery-overlay h3 {
+        font-size: 22px;
+    }
 }
 
 
@@ -2793,7 +2852,7 @@ footer p:last-child {
 .lightbox-caption h3 {
     margin: 0;
 
-    color: white;
+    color: #ffffff;
 
     font-size: 22px;
 
@@ -2802,7 +2861,7 @@ footer p:last-child {
 
 
 /* =========================================================
-   CLOSE BUTTON
+   LIGHTBOX CLOSE
 ========================================================= */
 
 .lightbox-close {
@@ -2827,7 +2886,7 @@ footer p:last-child {
     background:
         rgba(255, 255, 255, 0.08);
 
-    color: white;
+    color: #ffffff;
 
     font-size: 30px;
 
@@ -2874,7 +2933,7 @@ footer p:last-child {
     background:
         rgba(255, 255, 255, 0.08);
 
-    color: white;
+    color: #ffffff;
 
     font-size: 22px;
 
@@ -2913,7 +2972,7 @@ footer p:last-child {
 
 
 /* =========================================================
-   MOBILE LIGHTBOX
+   LIGHTBOX MOBILE
 ========================================================= */
 
 @media (max-width: 700px) {
@@ -2965,689 +3024,55 @@ footer p:last-child {
     .lightbox-caption h3 {
         font-size: 18px;
     }
-
-}
-/* =========================================================
-   DOA IBU FC
-   GALLERY — PREMIUM EDITORIAL ASYMMETRIC
-   FINAL OVERRIDE
-========================================================= */
-
-
-/* =========================================================
-   GALLERY SECTION
-========================================================= */
-
-.gallery {
-    position: relative;
-
-    padding: 110px 7% 125px;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(189, 238, 255, 0.35),
-            transparent 28%
-        ),
-        linear-gradient(
-            180deg,
-            #f4fbff 0%,
-            #eef8fc 100%
-        );
-
-    overflow: hidden;
 }
 
 
 /* =========================================================
-   DECORATIVE CIRCLES
+   ACCESSIBILITY / TOUCH
 ========================================================= */
 
-.gallery::before {
-    content: "";
+@media (hover: none) {
 
-    position: absolute;
+    .player-card:hover,
+    .gallery-item:hover,
+    .team:hover .team-logo {
+        transform: none;
+    }
 
-    width: 520px;
-    height: 520px;
+    .player-card:hover .player-card-photo,
+    .gallery-item:hover img {
+        transform: none;
+    }
 
-    top: -300px;
-    right: -220px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(22, 132, 170, 0.08);
-
-    pointer-events: none;
-}
-
-.gallery::after {
-    content: "";
-
-    position: absolute;
-
-    width: 380px;
-    height: 380px;
-
-    bottom: -230px;
-    left: -210px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(22, 132, 170, 0.08);
-
-    pointer-events: none;
+    .gallery-item:hover::after {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(7, 30, 43, 0.02) 0%,
+                rgba(7, 30, 43, 0.08) 35%,
+                rgba(7, 30, 43, 0.78) 78%,
+                rgba(7, 30, 43, 0.96) 100%
+            );
+    }
 }
 
 
 /* =========================================================
-   GALLERY HEADER
+   REDUCED MOTION
 ========================================================= */
 
-.gallery-header {
-    position: relative;
+@media (prefers-reduced-motion: reduce) {
 
-    z-index: 5;
-
-    display: block;
-
-    max-width: 760px;
-
-    margin: 0 auto 60px;
-
-    text-align: center;
-}
-
-.gallery-header .section-label {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color: #1684aa;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 4px;
-}
-
-.gallery-header h2 {
-    display: block;
-
-    margin: 0;
-
-    color: #123b52;
-
-    font-size: clamp(42px, 5vw, 60px);
-
-    font-weight: 900;
-
-    line-height: 1;
-
-    letter-spacing: -2px;
-}
-
-.gallery-header p {
-    display: block;
-
-    max-width: 600px;
-
-    margin: 18px auto 0;
-
-    color: #718894;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   MAIN ASYMMETRIC GRID
-========================================================= */
-
-.gallery-content {
-    position: relative;
-
-    z-index: 5;
-
-    max-width: 1380px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        1.05fr
-        1.35fr;
-
-    grid-template-rows:
-        270px
-        270px;
-
-    gap: 24px;
-
-    text-align: left;
-}
-
-
-/* =========================================================
-   ALL GALLERY CARDS
-========================================================= */
-
-.gallery-item {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    overflow: hidden;
-
-    border-radius: 26px;
-
-    background: #dff6ff;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 18px 45px rgba(18, 59, 82, 0.10);
-
-    transform: translateZ(0);
-
-    transition:
-        transform 0.45s cubic-bezier(.2,.7,.2,1),
-        box-shadow 0.45s cubic-bezier(.2,.7,.2,1);
-}
-
-
-/* =========================================================
-   LEFT FEATURE CARD
-========================================================= */
-
-.gallery-item:first-child {
-    grid-column: 1;
-
-    grid-row: 1 / 3;
-
-    min-height: 564px;
-}
-
-
-/* =========================================================
-   TOP RIGHT CARD
-========================================================= */
-
-.gallery-item:nth-child(2) {
-    grid-column: 2;
-
-    grid-row: 1;
-}
-
-
-/* =========================================================
-   BOTTOM RIGHT CARD
-========================================================= */
-
-.gallery-item:nth-child(3) {
-    grid-column: 2;
-
-    grid-row: 2;
-}
-
-
-/* =========================================================
-   IMAGE
-========================================================= */
-
-.gallery-item img {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.8s cubic-bezier(.2,.7,.2,1),
-        filter 0.5s ease;
-}
-
-
-/* =========================================================
-   IMAGE POSITION
-========================================================= */
-
-/* Team photo */
-
-.gallery-item:first-child img {
-    object-position: center center;
-
-    filter: saturate(0.92);
-}
-
-
-/* Matchday photo */
-
-.gallery-item:nth-child(2) img {
-    object-position: center center;
-}
-
-
-/* Jersey */
-
-.gallery-item:nth-child(3) img {
-    object-position: center 48%;
-}
-
-
-/* =========================================================
-   PREMIUM OVERLAY
-========================================================= */
-
-.gallery-item::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(7, 30, 43, 0.02) 0%,
-            rgba(7, 30, 43, 0.08) 35%,
-            rgba(7, 30, 43, 0.78) 78%,
-            rgba(7, 30, 43, 0.96) 100%
-        );
-
-    pointer-events: none;
-
-    transition:
-        background 0.45s ease;
-}
-
-
-/* =========================================================
-   HOVER
-========================================================= */
-
-.gallery-item:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 30px 70px rgba(18, 59, 82, 0.18);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.055);
-
-    filter: saturate(1.02);
-}
-
-.gallery-item:hover::after {
-    background:
-        linear-gradient(
-            180deg,
-            rgba(7, 30, 43, 0.04) 0%,
-            rgba(7, 30, 43, 0.12) 35%,
-            rgba(7, 30, 43, 0.82) 80%,
-            rgba(7, 30, 43, 0.97) 100%
-        );
-}
-
-
-/* =========================================================
-   TOP WHITE DETAIL LINE
-========================================================= */
-
-.gallery-item .gallery-line {
-    position: absolute;
-
-    top: 27px;
-    left: 29px;
-
-    width: 52px;
-    height: 3px;
-
-    z-index: 4;
-
-    border-radius: 20px;
-
-    background: #ffffff;
-
-    transition:
-        width 0.4s ease;
-}
-
-.gallery-item:hover .gallery-line {
-    width: 82px;
-}
-
-
-/* =========================================================
-   NUMBER
-========================================================= */
-
-.gallery-number {
-    position: absolute;
-
-    top: 20px;
-    right: 27px;
-
-    z-index: 4;
-
-    color: rgba(255,255,255,0.76);
-
-    font-size: 58px;
-
-    font-weight: 900;
-
-    line-height: 1;
-
-    letter-spacing: -3px;
-
-    pointer-events: none;
-}
-
-
-/* FEATURE NUMBER */
-
-.gallery-item:first-child .gallery-number {
-    top: 24px;
-    right: 30px;
-
-    font-size: 88px;
-
-    color: rgba(255,255,255,0.68);
-}
-
-
-/* =========================================================
-   OVERLAY CONTENT
-========================================================= */
-
-.gallery-overlay {
-    position: absolute;
-
-    left: 30px;
-    right: 30px;
-    bottom: 29px;
-
-    z-index: 4;
-
-    color: white;
-}
-
-
-/* FEATURE CONTENT */
-
-.gallery-item:first-child .gallery-overlay {
-    left: 38px;
-    right: 38px;
-    bottom: 38px;
-}
-
-
-/* SMALL LABEL */
-
-.gallery-overlay span {
-    display: block;
-
-    margin-bottom: 9px;
-
-    color: #bdeeff;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 3px;
-}
-
-
-/* TITLE */
-
-.gallery-overlay h3 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size: 25px;
-
-    font-weight: 900;
-
-    line-height: 1.1;
-
-    letter-spacing: 0;
-}
-
-
-/* FEATURE TITLE */
-
-.gallery-item:first-child .gallery-overlay h3 {
-    font-size: 34px;
-}
-
-
-/* DESCRIPTION */
-
-.gallery-overlay p {
-    margin-top: 8px;
-
-    color: rgba(255,255,255,0.78);
-
-    font-size: 12px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   FEATURE DECORATIVE BIG NUMBER
-========================================================= */
-
-.gallery-item:first-child::before {
-    content: "01";
-
-    position: absolute;
-
-    left: 28px;
-    top: 24px;
-
-    z-index: 2;
-
-    color: rgba(255,255,255,0.08);
-
-    font-size: 150px;
-
-    font-weight: 900;
-
-    line-height: 1;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .gallery {
-        padding:
-            90px 5% 105px;
+    html {
+        scroll-behavior: auto;
     }
 
-    .gallery-header {
-        margin-bottom: 45px;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
-
-    .gallery-content {
-        grid-template-columns:
-            1fr 1.15fr;
-
-        grid-template-rows:
-            240px
-            240px;
-
-        gap: 20px;
-    }
-
-    .gallery-item:first-child {
-        min-height: 500px;
-    }
-
-    .gallery-item:first-child .gallery-overlay h3 {
-        font-size: 28px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .gallery {
-        padding:
-            75px 5% 90px;
-    }
-
-    .gallery-header {
-        margin-bottom: 35px;
-    }
-
-    .gallery-header .section-label {
-        font-size: 10px;
-
-        letter-spacing: 3px;
-    }
-
-    .gallery-header h2 {
-        font-size: 39px;
-
-        letter-spacing: -1px;
-    }
-
-    .gallery-header p {
-        margin-top: 14px;
-
-        font-size: 12px;
-    }
-
-
-    /* MOBILE GRID */
-
-    .gallery-content {
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        grid-template-rows:
-            390px
-            270px
-            270px;
-
-        gap: 18px;
-    }
-
-
-    .gallery-item,
-    .gallery-item:first-child,
-    .gallery-item:nth-child(2),
-    .gallery-item:nth-child(3) {
-
-        grid-column: auto;
-
-        grid-row: auto;
-
-        width: 100%;
-
-        min-height: 0;
-
-        height: 100%;
-
-        border-radius: 20px;
-    }
-
-
-    /* FEATURE */
-
-    .gallery-item:first-child .gallery-overlay {
-        left: 24px;
-        right: 24px;
-        bottom: 25px;
-    }
-
-    .gallery-item:first-child .gallery-overlay h3 {
-        font-size: 26px;
-    }
-
-
-    /* OTHER CARDS */
-
-    .gallery-overlay {
-        left: 22px;
-        right: 22px;
-        bottom: 22px;
-    }
-
-    .gallery-overlay h3 {
-        font-size: 20px;
-    }
-
-    .gallery-number {
-        top: 17px;
-        right: 20px;
-
-        font-size: 45px;
-    }
-
-    .gallery-item:first-child .gallery-number {
-        top: 19px;
-        right: 20px;
-
-        font-size: 62px;
-    }
-
-    .gallery-item:first-child::before {
-        font-size: 110px;
-    }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .gallery-content {
-        grid-template-rows:
-            340px
-            245px
-            245px;
-    }
-
-    .gallery-header h2 {
-        font-size: 34px;
-    }
-
-    .gallery-item:first-child .gallery-overlay h3 {
-        font-size: 23px;
-    }
-
 }
