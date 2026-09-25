@@ -1639,35 +1639,155 @@ nav a:hover::after {
 
 
 /* =========================================================
-   GALLERY GRID
+   GALLERY — PREMIUM ASYMMETRIC
 ========================================================= */
 
-.gallery-content {
+.gallery {
     position: relative;
-    z-index: 2;
+    padding: 115px 7% 125px;
+    text-align: center;
 
-    display: grid;
-    grid-template-columns:
-        repeat(3, 1fr);
+    background:
+        linear-gradient(
+            180deg,
+            #f4fbff 0%,
+            #eef9fd 100%
+        );
 
-    gap: 25px;
-
-    max-width: 1350px;
-    margin: auto;
+    overflow: hidden;
 }
 
 
 /* =========================================================
-   GALLERY ITEM
+   DECORATIVE BACKGROUND
+========================================================= */
+
+.gallery::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -270px;
+    right: -220px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(22, 132, 170, 0.08);
+}
+
+.gallery::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    bottom: -200px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(22, 132, 170, 0.08);
+}
+
+
+/* =========================================================
+   GALLERY HEADER
+========================================================= */
+
+.gallery-header {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+
+    margin:
+        0 auto 60px;
+}
+
+.gallery-header .section-label {
+    display: block;
+
+    margin-bottom: 12px;
+}
+
+.gallery-header h2 {
+    margin: 0;
+
+    color: #123b52;
+
+    font-size:
+        clamp(42px, 5vw, 58px);
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.gallery-header p {
+    max-width: 600px;
+
+    margin:
+        18px auto 0;
+
+    color: #718894;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ASYMMETRIC GRID
+========================================================= */
+
+.gallery-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1350px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.55fr
+        1fr;
+
+    grid-template-rows:
+        270px
+        270px;
+
+    gap: 24px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   GALLERY CARD
 ========================================================= */
 
 .gallery-item {
     position: relative;
-    height: 430px;
+
+    height: 100%;
 
     overflow: hidden;
 
-    border-radius: 22px;
+    border-radius: 24px;
 
     background:
         linear-gradient(
@@ -1676,19 +1796,47 @@ nav a:hover::after {
             #c5eaf7
         );
 
-    box-shadow:
-        0 18px 45px rgba(18, 59, 82, 0.10);
-
     cursor: pointer;
 
+    box-shadow:
+        0 18px 45px
+        rgba(18, 59, 82, 0.10);
+
     transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
 }
 
 
 /* =========================================================
-   GALLERY IMAGE
+   LARGE FEATURE IMAGE
+========================================================= */
+
+.gallery-item:first-child {
+    grid-column: 1;
+    grid-row: 1 / 3;
+
+    min-height: 564px;
+}
+
+
+/* =========================================================
+   RIGHT SIDE CARDS
+========================================================= */
+
+.gallery-item:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.gallery-item:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+/* =========================================================
+   IMAGE
 ========================================================= */
 
 .gallery-item img {
@@ -1698,33 +1846,48 @@ nav a:hover::after {
     display: block;
 
     object-fit: cover;
+
     object-position: center;
 
     transition:
-        transform 0.7s ease;
+        transform 0.8s
+        cubic-bezier(.2,.7,.2,1);
 }
 
 
 /* =========================================================
-   DARK OVERLAY
+   FEATURE IMAGE POSITION
+========================================================= */
+
+.gallery-item:first-child img {
+    object-position: center 42%;
+}
+
+
+/* =========================================================
+   DARK PREMIUM OVERLAY
 ========================================================= */
 
 .gallery-item::after {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
         linear-gradient(
             to top,
-            rgba(8, 36, 52, 0.95) 0%,
-            rgba(8, 36, 52, 0.60) 32%,
-            rgba(8, 36, 52, 0.12) 68%,
+            rgba(8, 36, 52, 0.96) 0%,
+            rgba(8, 36, 52, 0.68) 28%,
+            rgba(8, 36, 52, 0.18) 68%,
             rgba(8, 36, 52, 0.02) 100%
         );
 
     z-index: 1;
+
+    transition:
+        background 0.4s ease;
 }
 
 
@@ -1733,77 +1896,27 @@ nav a:hover::after {
 ========================================================= */
 
 .gallery-item:hover {
-    transform: translateY(-10px);
+    transform:
+        translateY(-8px);
 
     box-shadow:
-        0 28px 60px rgba(18, 59, 82, 0.18);
+        0 30px 65px
+        rgba(18, 59, 82, 0.18);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.07);
+    transform:
+        scale(1.065);
 }
 
-
-/* =========================================================
-   GALLERY CONTENT OVER IMAGE
-========================================================= */
-
-.gallery-overlay {
-    position: absolute;
-
-    left: 28px;
-    right: 28px;
-    bottom: 28px;
-
-    z-index: 3;
-
-    text-align: left;
-
-    color: white;
-}
-
-
-/* Small category */
-
-.gallery-overlay span {
-    display: inline-block;
-
-    margin-bottom: 9px;
-
-    color: #bdeeff;
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 3px;
-}
-
-
-/* Main title */
-
-.gallery-overlay h3 {
-    margin: 0;
-
-    color: white;
-
-    font-size: 23px;
-    font-weight: 900;
-
-    letter-spacing: 0.3px;
-}
-
-
-/* Description */
-
-.gallery-overlay p {
-    margin-top: 7px;
-
-    color:
-        rgba(255, 255, 255, 0.78);
-
-    font-size: 12px;
-
-    line-height: 1.5;
+.gallery-item:hover::after {
+    background:
+        linear-gradient(
+            to top,
+            rgba(8, 36, 52, 0.98) 0%,
+            rgba(8, 36, 52, 0.58) 42%,
+            rgba(8, 36, 52, 0.08) 100%
+        );
 }
 
 
@@ -1814,32 +1927,45 @@ nav a:hover::after {
 .gallery-number {
     position: absolute;
 
-    top: 20px;
-    right: 24px;
+    top: 22px;
+    right: 28px;
 
     z-index: 3;
 
     color:
-        rgba(255, 255, 255, 0.72);
+        rgba(255,255,255,0.72);
 
-    font-size: 55px;
+    font-size: 58px;
+
     font-weight: 900;
 
     line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+/* LARGE NUMBER */
+
+.gallery-item:first-child .gallery-number {
+    font-size: 92px;
+
+    top: 25px;
+    right: 32px;
 }
 
 
 /* =========================================================
-   GALLERY TOP LINE
+   TOP LINE
 ========================================================= */
 
 .gallery-item .gallery-line {
     position: absolute;
 
-    top: 25px;
-    left: 25px;
+    top: 28px;
+    left: 28px;
 
-    width: 45px;
+    width: 48px;
     height: 3px;
 
     border-radius: 20px;
@@ -1853,7 +1979,108 @@ nav a:hover::after {
 }
 
 .gallery-item:hover .gallery-line {
-    width: 75px;
+    width: 82px;
+}
+
+
+/* =========================================================
+   OVERLAY CONTENT
+========================================================= */
+
+.gallery-overlay {
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+
+    z-index: 3;
+
+    color: white;
+}
+
+
+/* FEATURE CARD TEXT */
+
+.gallery-item:first-child
+.gallery-overlay {
+    left: 38px;
+    right: 38px;
+    bottom: 38px;
+}
+
+.gallery-overlay span {
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    color: #bdeeff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.gallery-overlay h3 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* FEATURE TITLE */
+
+.gallery-item:first-child
+.gallery-overlay h3 {
+    font-size: 32px;
+
+    letter-spacing: 0;
+}
+
+.gallery-overlay p {
+    margin-top: 7px;
+
+    color:
+        rgba(255,255,255,0.78);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PREMIUM CORNER DETAIL
+========================================================= */
+
+.gallery-item:first-child::before {
+    content: "01";
+
+    position: absolute;
+
+    left: 30px;
+    top: 28px;
+
+    z-index: 3;
+
+    color:
+        rgba(255,255,255,0.10);
+
+    font-size: 150px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    pointer-events: none;
 }
 
 
@@ -1870,21 +2097,25 @@ nav a:hover::after {
 
     .gallery-content {
         grid-template-columns:
-            repeat(2, 1fr);
+            1.35fr
+            1fr;
+
+        grid-template-rows:
+            240px
+            240px;
+
+        gap: 20px;
     }
 
-    .gallery-item {
-        height: 390px;
+    .gallery-item:first-child {
+        min-height: 500px;
     }
 
-    .gallery-item:last-child {
-        grid-column:
-            1 / -1;
-
-        max-width: 50%;
-        width: 100%;
-        margin: auto;
+    .gallery-item:first-child
+    .gallery-overlay h3 {
+        font-size: 27px;
     }
+
 }
 
 
@@ -1892,7 +2123,7 @@ nav a:hover::after {
    MOBILE
 ========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     .gallery {
         padding:
@@ -1912,18 +2143,58 @@ nav a:hover::after {
     }
 
     .gallery-content {
+        display: grid;
+
         grid-template-columns: 1fr;
-        gap: 20px;
+
+        grid-template-rows:
+            380px
+            260px
+            260px;
+
+        gap: 18px;
     }
 
-    .gallery-item {
-        height: 350px;
-    }
 
-    .gallery-item:last-child {
+    /* ALL CARDS RESET */
+
+    .gallery-item,
+    .gallery-item:first-child,
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3) {
+
         grid-column: auto;
-        max-width: none;
+        grid-row: auto;
+
+        min-height: 0;
+
+        height: 100%;
     }
+
+
+    /* FEATURE */
+
+    .gallery-item:first-child
+    .gallery-overlay {
+        left: 24px;
+        right: 24px;
+        bottom: 24px;
+    }
+
+    .gallery-item:first-child
+    .gallery-overlay h3 {
+        font-size: 25px;
+    }
+
+    .gallery-item:first-child
+    .gallery-number {
+        font-size: 62px;
+
+        right: 22px;
+    }
+
+
+    /* OTHER CARDS */
 
     .gallery-overlay {
         left: 22px;
@@ -1937,8 +2208,11 @@ nav a:hover::after {
 
     .gallery-number {
         font-size: 45px;
+
+        top: 18px;
         right: 20px;
     }
+
 }
 
 
@@ -1948,13 +2222,18 @@ nav a:hover::after {
 
 @media (max-width: 380px) {
 
-    .gallery-header h2 {
-        font-size: 34px;
+    .gallery-content {
+        grid-template-rows:
+            330px
+            240px
+            240px;
     }
 
-    .gallery-item {
-        height: 310px;
+    .gallery-item:first-child
+    .gallery-overlay h3 {
+        font-size: 22px;
     }
+
 }
 
 
